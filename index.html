@@ -10,77 +10,86 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Trivia Quest Game!</h1>
-    </header>
 
-    <!-- Players who play the game -->
-    <div>
-        <div>
-            <h2>Player 1 </h2>
-            <input type="text" placeholder="Enter Your Name">
+    <section id="startGame" class="columns">
+        <div class="column is-three-fifths is-offset-one-fifth">
+      
+            <h1 class="title is-1">Welcome to Trivia Quest Game!</h1>
+       
+
+        <!-- Players who play the game -->
+            <div class="players">
+                <div id="player1"class="column is-half">
+                    <h2 class="title">Player 1</h2>
+                    <input class="input" type="text" placeholder="Enter Your Name">
+                </div>
+
+                <div id="player2" class="column is-half">
+                    <h2 class="title">Player 2</h2>
+                    <input class="input" type="text" placeholder="Enter Your Name">
+                </div>
+
+                <div id="player3" class="column is-half">
+                    <h2 class="title">Player 3</h2>
+                    <input class="input" type="text" placeholder="Enter Your Name">
+                </div>
+
+                <div id="player4" class="column is-half">
+                    <h2 class="title">Player 4</h2>
+                    <input class="input" type="text" placeholder="Enter Your Name">
+                </div>
+
+                <div id="player5" class="column is-half">
+                    <h2 class="title">Player 5</h2>
+                    <input class="input" type="text" placeholder="Enter Your Name">
+                </div>   
+            </div>
+            <!-- Categories of questions -->
+            <div id="questsCategories" class="column">
+                <h2 class="title">Categories</h2>
+                <div class="column">
+                    <h3 class="subtitle">Movies</h3>
+                    <h3 class="subtitle">Geography</h3>
+                    <h3 class="subtitle">TBD</h3>
+                </div>
+                <!-- Starts the game -->
+                <button id="playBtn" class="button is-large is-primary" type="button">Play</button>
+            </div>
         </div>
-
-        <div>
-            <h2>Player 2 </h2>
-            <input type="text" placeholder="Enter Your Name">
-        </div>
-
-        <div>
-            <h2>Player 3 </h2>
-            <input type="text" placeholder="Enter Your Name">
-        </div>
-
-        <div>
-            <h2>Player 4 </h2>
-            <input type="text" placeholder="Enter Your Name">
-        </div>
-
-        <div>
-            <h2>Player 5 </h2>
-            <input type="text" placeholder="Enter Your Name">
-        </div>   
-    </div>
-
-    <!-- Categories of questions -->
-    <div>
-        <h2>Categories</h2>
-        <div>
-            <h3>Movies</h3>
-            <h3>Geography</h3>
-            <h3>TBD</h3>
-        </div>
-    </div>
-
-    <!-- Starts the game -->
-    <button type="button">Play</button>
+    </section>
 
     <hr>
+
     <!-- Show the questions-->
-    <div>
-        <div id="timer">Time:</div>
-        <h2>Question: <span id="questionTitle"></span></h2>
-        <div id="answerButtons"></div>
-        <div id="alertUser"></div>
-        <button type="button">Next Question</button>
-    </div>
-    
-    <hr>
-    <!-- Show the results -->
-    <div>
-        <h2>Results</h2>
-        <div>
-            <h3>First: <span id="firtPlace"></span></h3>
-            <h3>Second: <span id="secondPlace"></span></h3>
-            <h3>Third: <span id="thirdPlace"></span></h3>
-            <h3>Forth: <span id="forthPlace"></span></h3>
-            <h3>Fifth: <span id="fifthPlace"></span></h3>
-        </div>
-        <div>
-            <button type="button">Play Again</button>
-        </div>
+    <section id="questsContainer" class="section">
 
-    </div>
+            <div id="timer">Time:</div>
+            <h2>Question: <span id="questionTitle"></span></h2>
+            <div id="answerButtons"></div>
+            <div id="alertUser"></div>
+            <button id="nextQuestion" type="button">Next Question</button>
+        
+    </section>
+
+    <hr>
+    
+    <!-- Show the results -->
+    <section id="results"class="section">
+       
+            <h2>Results</h2>
+            <div>
+                <h3>First: <span id="firtPlace"></span></h3>
+                <h3>Second: <span id="secondPlace"></span></h3>
+                <h3>Third: <span id="thirdPlace"></span></h3>
+                <h3>Forth: <span id="forthPlace"></span></h3>
+                <h3>Fifth: <span id="fifthPlace"></span></h3>
+            </div>
+            <div>
+                <button id="playAgain"type="button">Play Again</button>
+            </div>
+
+        
+    </section>
 
     
 </body>
