@@ -1,13 +1,13 @@
-var marvelUrl = "https://gateway.marvel.com/v1/public/characters/?apikey=d782c681f06df65eee93b880dc599fb7"
+var marvelUrl = "https://pokeapi.co/api/v2/pokmon/?limit=20&offset=20"
 
-function getApi(marvelUrl) {
-    fetch(marvelUrl)
-      .then(function (response) {
-        console.log(response);
+
+fetch(marvelUrl)
+    .then(function (response) {
+      console.log(response);
         
         return response.json();
     })
     .then(function(data){
       console.log(data)
     });
-  }
+  
