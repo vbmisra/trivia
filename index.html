@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Trivia Quest Game</title>
+</head>
+<body>
+
+    <section id="startGame" class="">
+        <div id="box"class="">
+            <h1 class="title is-1 has-text-centered">Welcome to Trivia Quest Game!</h1>
+        
+            <!-- Players who play the game -->
+            <div class="players">  
+                <div class="playerBox">
+                    <div class="playerEl">
+                        <h2 class="title customTitle">Player</h2>
+                        <div>
+                            <input class="input customInput" type="text" placeholder="Enter Your Name">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="has-text-centered" >
+                    <button id="addPlayer" class="button is-large is-primary" type="button"><i id="addPlayerIcon" class="fas fa-user-plus"></i>Add Player</button>
+                </div>
+            </div>
+
+            <br>
+            <!-- Categories of questions -->
+            <div id="questsCategories" class="">
+                <h2 class="title is-2 has-text-centered">Categories</h2>
+                <div id="categoriesBox">
+                    <div id="category1" class="box">
+                        <h3 class="subtitle has-text-centered categoriesTitle">MOVIES</h3>
+                    </div>
+                    <div id="category2" class="box">
+                        <h3 class="subtitle has-text-centered categoriesTitle">GEOGRAPHY</h3>
+                    </div>
+                    
+                    <div id="category3" class="box">
+                        <h3 class="subtitle has-text-centered categoriesTitle">TBD</h3>
+                    </div>
+                </div>
+                <br>
+                <!-- Starts the game -->
+                <div class="has-text-centered" >
+                    <button id="playBtn" class="button is-large is-primary " type="button">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
