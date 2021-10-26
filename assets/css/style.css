@@ -1,8 +1,113 @@
 
 
-#startGame {
-    display: flex;
-    justify-content: center;
+
+body {
+    background: linear-gradient(#e6b878, #d58553);
+    height: 100vh;
+    margin: 0;
+}
+
+#startGame, #questsContainer {
+    padding-top: 8%;
     
 }
 
+
+#box h1, #questsCategories h2{
+   font-weight: 900;
+}
+
+
+
+.playerBox{
+
+    display: flex;
+    justify-content: center;
+}
+.customInput{
+    border: 2px solid;
+}
+
+.customTitle{
+    margin-right: 10px;
+}
+
+
+
+.playerEl{
+    display: flex;
+}
+.playerEl h2 {
+    font-weight: bold;
+}
+#addPlayerIcon{
+    margin-right: 7px;
+}
+
+
+
+#categoriesBox{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+.categoriesTitle {
+    padding: 30px;
+    font-weight: 700;
+    color: whitesmoke;
+
+}
+
+#category1, #category2, #category3{
+
+    border: 3px solid #e6b878;
+    margin: 0 10px;
+    background-color: #dd8306;
+    cursor: pointer;
+}
+
+#category1:hover, #category2:hover, #category3:hover {
+    background-color: #bd510d;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#playBtn, #addPlayer, #nextQuestion {
+    background-color: #bd510d;
+}
+#playBtn:hover, #nextQuestion:hover{
+    font-size: 25px;
+    transition: all 0.3s ease-in-out;
+    background-color: #9b4007;
+}
+#addPlayer:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #9b4007;
+}
+
+/* #questsContainer, #timer, #questionTitle,.questions, #answerButtons, #questsBox {
+    border: 5px solid gray;
+} */
+
+
+.customAnsBtns{
+    border: 3px solid #e6b878;
+    background-color: #dd8306;
+    padding: 5%;
+    margin: 10px;
+    color: whitesmoke;
+
+}
+
+.customAnsBtns:hover {
+
+    background-color: #bd510d;
+    transition: all 0.3s ease-in-out;
+    color: whitesmoke;
+
+}
