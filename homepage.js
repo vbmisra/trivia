@@ -30,8 +30,9 @@ function addPlayer(e){
 function userInput(){
     var inputEl = document.querySelector('#text-input').value
     var playerList = [];
-    playerList += inputEl
-    window.localStorage = playerList;
+    playerList.push(inputEl)
+    window.localStorage.playerList = playerList;
+    console.log(localStorage)
     console.log(playerList) 
 
     
