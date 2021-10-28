@@ -1,19 +1,24 @@
 
-
-
-body {
-    background: linear-gradient(#e6b878, #d58553);
-    height: 100vh;
-    margin: 0;
+* {
+    box-sizing: border-box;
+    
 }
 
-#startGame, #questsContainer {
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(#e6b878, #d58553);
+    min-height: 100vh;
+    
+}
+
+#startGame, #questsContainer, #results {
     padding-top: 8%;
     
 }
 
 
-#box h1, #questsCategories h2{
+#box h1, #questsCategories h2, #results h2{
    font-weight: 900;
 }
 
@@ -37,7 +42,7 @@ body {
 .playerEl{
     display: flex;
 }
-.playerEl h2 {
+.playerEl h2, #results h3 {
     font-weight: bold;
 }
 #addPlayerIcon{
@@ -46,49 +51,51 @@ body {
 
 
 
-#categoriesBox{
+/* #categoriesBox{
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 
-}
+} */
 
 
 
 
-.categoriesTitle {
-    padding: 30px;
-    font-weight: 700;
-    color: whitesmoke;
-
-}
-
-#category1, #category2, #category3{
-
+.categoriesBtns {
     border: 3px solid #e6b878;
-    margin: 0 10px;
     background-color: #dd8306;
-    cursor: pointer;
+    padding: 5%;
+    margin: 5px;
+    color: whitesmoke;
+    width: 20%;
+    
 }
 
-#category1:hover, #category2:hover, #category3:hover {
+
+.categoriesBtns:hover{
+   background-color: #bd510d;
+    transition: all 0.3s ease-in-out; 
+}
+
+
+#playBtn, #addPlayer, #nextQuestion, #playAgainBtn, #homeBtn {
     background-color: #bd510d;
-    transition: all 0.3s ease-in-out;
 }
-
-
-#playBtn, #addPlayer, #nextQuestion {
-    background-color: #bd510d;
-}
-#playBtn:hover, #nextQuestion:hover{
+#playBtn:hover, #nextQuestion:hover {
     font-size: 25px;
     transition: all 0.3s ease-in-out;
     background-color: #9b4007;
 }
-#addPlayer:hover {
+#addPlayer:hover,#playAgainBtn:hover, #homeBtn:hover {
     transition: all 0.3s ease-in-out;
     background-color: #9b4007;
 }
+
+#playAgainBtn, #homeBtn {
+    margin: 10px;
+}
+
+
 
 /* #questsContainer, #timer, #questionTitle,.questions, #answerButtons, #questsBox {
     border: 5px solid gray;
@@ -98,10 +105,11 @@ body {
 .customAnsBtns{
     border: 3px solid #e6b878;
     background-color: #dd8306;
-    padding: 5%;
+    padding: 2%;
+    width: 35%;
     margin: 10px;
     color: whitesmoke;
-
+    border-radius: 20px;
 }
 
 .customAnsBtns:hover {
@@ -110,4 +118,126 @@ body {
     transition: all 0.3s ease-in-out;
     color: whitesmoke;
 
+}
+
+/* #firstPlace, #secondPlace, #thirdPlace, #forthPlace, #fifthPlace{
+    font-weight: normal;
+}
+
+#results, #results h2, #results h3{
+    border: 5px solid green;
+}
+#results h3 span{
+    border: 5px solid red;
+
+} */
+
+#positions {
+    border: 5px solid red;
+
+}
+
+
+.customTable{
+    display: flex;
+    justify-content: center;
+
+}
+
+#tableTitle{
+    background-color: #dd8306;
+}
+
+#tableData{
+    background-color: #e6b878;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .categoriesBtns {
+        padding: 6%;
+        margin: 5px;
+        width: 21%;
+    }
+
+    .customAnsBtns{
+   
+        padding: 5%;
+        width: 70%;
+    }
+    
+    
+
+
+ 
+}
+@media screen and (max-width: 768px) {
+
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    #box h1, #questsCategories h2{
+        font-weight: bold;
+    }
+    .categoriesBtns {
+      
+        padding: 4%;
+        margin: 5px;
+        width: 60%;
+    }   
+    .customAnsBtns{
+   
+        padding: 5%;
+        width: 80%;
+    } 
+}
+
+@media screen and (max-width: 600px) {
+
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    
+    #category1, #category2, #category3{
+        padding: 8%;
+        margin: 3px;
+        width: 30%;
+        font-size: 14px;
+        border-radius: 8px;
+        border: 2px solid #e6b878;
+
+    }
+
+    #ansBtn1, #ansBtn2, #ansBtn3, #ansBtn4{
+        width: 80%;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 2px solid #e6b878;
+
+    }
+    #timer{
+        font-size: 20px;
+    }
+    #questsContainer h2, #questionTitle {
+        font-size: 24px;
+    }
+    #nextQuestion{
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    #alertUser, #playBtn, #addPlayer{
+        font-size: 16px;
+    }
+    #playBtn:hover, #nextQuestion:hover {
+        font-size: 17px;
+    }
 }
