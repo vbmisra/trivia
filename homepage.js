@@ -1,6 +1,8 @@
 var addPlayerEl = document.getElementById('addPlayer')
 var playerBoxEl = document.querySelector('.playerBox')
 var playBtnEl = document.getElementById('playBtn')
+var newPlayerEl = document.getElementById('newPlayer')
+
 
 addPlayerEl.addEventListener('click', addPlayer)
 playBtnEl.addEventListener('click', playBtn)
@@ -19,7 +21,7 @@ function addPlayer(e){
     playerNameList.append(playerName)
     playerName.textContent = inputEl
     //console.log('hello')
-    playerBoxEl.append(playerNameList)
+    newPlayerEl.append(playerNameList)
     userInput()
     
     
