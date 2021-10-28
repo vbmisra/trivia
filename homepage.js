@@ -1,5 +1,5 @@
 var addPlayerEl = document.getElementById('addPlayer')
-var playerListEl = document.querySelector('.players')
+var playerBoxEl = document.querySelector('.playerBox')
 
 
 addPlayerEl.addEventListener('click', addPlayer)
@@ -8,21 +8,26 @@ addPlayerEl.addEventListener('click', addPlayer)
 function addPlayer(e){
     e.preventDefault()
 
-    var newPlayer = document.createElement('div')
-    var newInput = document.createElement('input')
-    newPlayer.textContent = 'hello'
+    var inputEl = document.querySelector('#text-input').value
+
+    var playerNameList = document.createElement('ul')
+    var playerName = document.createElement('li')
+    playerNameList.append(playerName)
+    playerName.textContent = inputEl
+    console.log('hello')
+    playerBoxEl.append(playerNameList)
+    userInput()
     
-    newPlayer.append(newInput)
-    playerListEl.append(newPlayer)
     
-    //userInput('marshmellow')
 
     
 }
 
-function userInput(x){
-    
+function userInput(){
     var inputEl = document.querySelector('#text-input').value
-    alert(inputEl+x)
+    window.Storage = inputEl;
+    console.log()
+
+    alert(inputEl)
     console.log('hello')
 }
