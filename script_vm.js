@@ -23,28 +23,41 @@
 
 // document.getElementById('fetch-button').addEventListener('click', getAPI);
 
-var fetchBtn = document.getElementById('fetch-button');
+// var fetchBtn = document.getElementById('fetch-button');
 
-function fetchAPI() {
-    console.log("test click");
-    fetch("https://shazam.p.rapidapi.com/auto-complete?term=stronger&locale=en-US", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "shazam.p.rapidapi.com",
-            "x-rapidapi-key": "ca8d7029bdmsh4c7f8dda0605b77p16f6fcjsnfbf2331b00a0"
-        }
-    })
-    .then(response => {
-        console.log(response);
+// function fetchAPI() {
+//     console.log("test click");
+//     fetch("https://shazam.p.rapidapi.com/auto-complete?term=stronger&locale=en-US", {
+//         "method": "GET",
+//         "headers": {
+//             "x-rapidapi-host": "shazam.p.rapidapi.com",
+//             "x-rapidapi-key": "ca8d7029bdmsh4c7f8dda0605b77p16f6fcjsnfbf2331b00a0"
+//         }
+//     })
+//     .then(response => {
+//         console.log(response);
+//         return response.json();
+//     })
+//     .then(function(data) {
+//         console.log(data);
+//         console.log(data.hints[0].term);
+//     })
+//     .catch(err => {
+//         console.error(err);
+//     });
+// }
+
+// fetchBtn.addEventListener('click', fetchAPI);
+
+var marvelUrl = "https://pokeapi.co/api/v2/pokmon/?limit=20&offset=20"
+
+
+fetch(marvelUrl)
+    .then(function (response) {
+      console.log(response);
+        
         return response.json();
     })
-    .then(function(data) {
-        console.log(data);
-        console.log(data.hints[0].term);
-    })
-    .catch(err => {
-        console.error(err);
+    .then(function(data){
+      console.log(data)
     });
-}
-
-fetchBtn.addEventListener('click', fetchAPI);
