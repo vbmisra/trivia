@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     
@@ -9,7 +8,6 @@ body {
     margin: 0;
     background: linear-gradient(#e6b878, #d58553);
     min-height: 100vh;
-    
 }
 
 #startGame, #questsContainer, #results {
@@ -45,38 +43,42 @@ body {
 .playerEl h2, #results h3 {
     font-weight: bold;
 }
+
+#newPlayerContianer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#newPlayer{
+    width: 40%;
+
+}
+
+
 #addPlayerIcon{
     margin-right: 7px;
 }
 
-
-
-/* #categoriesBox{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-
-} */
-
-
-
+#categoriesBox{
+    margin-top: 10px;
+}
 
 .categoriesBtns {
     border: 3px solid #e6b878;
     background-color: #dd8306;
+    border-radius: 10px;
     padding: 5%;
     margin: 5px;
     color: whitesmoke;
-    width: 20%;
-    
+    width: 20%; 
 }
-
 
 .categoriesBtns:hover{
-   background-color: #bd510d;
-    transition: all 0.3s ease-in-out; 
-}
+    background-color: #bd510d;
+    transition: all 0.3s ease-in-out;
+    color: whitesmoke;
 
+}
 
 #playBtn, #addPlayer, #nextQuestion, #playAgainBtn, #homeBtn {
     background-color: #bd510d;
@@ -109,7 +111,7 @@ body {
     width: 35%;
     margin: 10px;
     color: whitesmoke;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .customAnsBtns:hover {
@@ -141,15 +143,19 @@ body {
 .customTable{
     display: flex;
     justify-content: center;
-
+    
 }
 
 #tableTitle{
-    background-color: #dd8306;
+    background: linear-gradient(#d58553, #e6b878);
+    width: 60%;
+    border-radius: 10px;
+    
 }
 
 #tableData{
     background-color: #e6b878;
+overflow-x: auto;
 }
 
 
@@ -159,31 +165,39 @@ body {
         display: flex;
         justify-content: center;
     }
+
+    #newPlayer{
+        width: 60%;
+    
+    }
     .categoriesBtns {
         padding: 6%;
         margin: 5px;
-        width: 21%;
+        width: 24%;
     }
 
     .customAnsBtns{
-   
         padding: 5%;
         width: 70%;
     }
-    
+
+    #tableTitle{
+        width: fit-content;
+    }
     
 
-
- 
 }
 @media screen and (max-width: 768px) {
-
     body{
         display: flex;
         justify-content: center;
     }
     #box h1, #questsCategories h2{
         font-weight: bold;
+    }
+    #newPlayer{
+        font-size: 20px;
+    
     }
     .categoriesBtns {
       
@@ -199,13 +213,31 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-
     body{
         display: flex;
         justify-content: center;
     }
+    #box h1, #questsCategories h2 {
+        font-size: 36px;
+    }
 
+    .playerEl{
+        justify-content: center;
+    }
+    #inputContainer{
+        width: 60%;
+
+    }
+    .customTitle{
+        font-size: 24px;
+        margin-right: 7px;
+        
+    }
+    #newPlayer{
+        width: 70%;
+        font-size: 22px;
     
+    }
     #category1, #category2, #category3{
         padding: 8%;
         margin: 3px;
@@ -227,7 +259,7 @@ body {
     #timer{
         font-size: 20px;
     }
-    #questsContainer h2, #questionTitle {
+    #questsContainer h2, #questionTitle, #results h2 {
         font-size: 24px;
     }
     #nextQuestion{
@@ -239,5 +271,28 @@ body {
     }
     #playBtn:hover, #nextQuestion:hover {
         font-size: 17px;
+    }
+
+    #tableTitle th{
+        font-size: 16px;
+    }
+    #tableData tr, #tableData th {
+        font-size: 14px;
+
+    }
+    #playAgainBtn, #homeBtn{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #tableTitle th{
+        font-size: 14px;
+    }
+    #tableData tr, #tableData th {
+        font-size: 12px;
+    }
+    #playAgainBtn, #homeBtn{
+        font-size: 14px;
     }
 }
