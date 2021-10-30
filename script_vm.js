@@ -3,6 +3,11 @@ var wikiBtn = document.getElementById('wiki-button');
 var pokeBtn = document.getElementById('pokemon-button');
 var musicBtn = document.getElementById('music-button');
 var nextBtn = document.querySelector('#nextQuestion');
+var choiceA = document.querySelector('#ansBtn1');
+var choiceB = document.querySelector('#ansBtn2');
+var choiceC = document.querySelector('#ansBtn3');
+var choiceD = document.querySelector('#ansBtn4');
+var questionEl = document.querySelector('#questionTitle');
 
 // URLs
 var wikiURL = "https://en.wikipedia.org/w/api.php?&origin=*&action=parse&format=json&page=Wonders_of_the_World&prop=wikitext&formatversion=2";
@@ -110,16 +115,16 @@ function makePokemonQuestions(arrPokemonNames){
             Correct: "D"
         }
     ];
-    // if(currentQuestion <= lastQuestion) {
-    //     questionEl.textContent = pokeQuestions[index].question;
-    //     choiceA.textContent = pokeQuestions[index].A;
-    //     choiceB.textContent = pokeQuestions[index].B;
-    //     choiceC.textContent = pokeQuestions[index].C;
-    //     choiceD.textContent = pokeQuestions[index].D;
-    // } else {
-    //     clearInterval(timer); // need to change depending on what Juwon defined
-    //     displayScore();
-    // }
+    if(currentQuestion <= lastQuestion) {
+        questionEl.textContent = pokeQuestions[index].question;
+        choiceA.textContent = pokeQuestions[index].A;
+        choiceB.textContent = pokeQuestions[index].B;
+        choiceC.textContent = pokeQuestions[index].C;
+        choiceD.textContent = pokeQuestions[index].D;
+    } else {
+        clearInterval(timer); // need to change depending on what Juwon defined
+        displayScore();
+    }
     console.log("sjhdkjshkdjh")
     console.log(pokeQuestions)
 }
@@ -163,16 +168,16 @@ function makeMusicQuestions(arrMusic){
             Correct: "C"
         }
     ];
-    // if(currentQuestion <= lastQuestion) {
-    //     questionEl.textContent = musicQuestions[index].question;
-    //     choiceA.textContent = musicQuestions[index].A;
-    //     choiceB.textContent = musicQuestions[index].B;
-    //     choiceC.textContent = musicQuestions[index].C;
-    //     choiceD.textContent = musicQuestions[index].D;
-    // } else {
-    //     clearInterval(timer); // need to change depending on what Juwon defined
-    //     displayScore();
-    // }
+    if(currentQuestion <= lastQuestion) {
+        questionEl.textContent = musicQuestions[index].question;
+        choiceA.textContent = musicQuestions[index].A;
+        choiceB.textContent = musicQuestions[index].B;
+        choiceC.textContent = musicQuestions[index].C;
+        choiceD.textContent = musicQuestions[index].D;
+    } else {
+        clearInterval(timer); // need to change depending on what Juwon defined
+        displayScore();
+    }
     console.log("sjhdkjshkdjh")
     console.log(musicQuestions)
 }
@@ -181,89 +186,89 @@ function makeMusicQuestions(arrMusic){
 //getMusicAPI();
 //console.log(getPokeAPI());
 // questions
-var wikiQuestions = [];
-var pokeQuestions = [
-    {
-        question: "Which pokemon evolves into Raichu?",
-        A: pokeAnswers[0],
-        B: pokeAnswers[4],
-        C: pokeAnswers[6],
-        D: pokeAnswers[8],
-        Correct: "B"
-    }, {
-        question: "Which pokemon can use flamethrower?",
-        A: pokeAnswers[2],
-        B: pokeAnswers[5],
-        C: pokeAnswers[15],
-        D: pokeAnswers[19],
-        Correct: "C"
-    }, {
-        question: "Which pokemon is famous for singing in the show?",
-        A: pokeAnswers[18],
-        B: pokeAnswers[7],
-        C: pokeAnswers[10],
-        D: pokeAnswers[11],
-        Correct: "A"
-    }, {
-        question: "Which pokemon looks like a cobra?",
-        A: pokeAnswers[3],
-        B: pokeAnswers[2],
-        C: pokeAnswers[14],
-        D: pokeAnswers[16],
-        Correct: "A"
-    }, {
-        question: "Which pokemon can fly?",
-        A: pokeAnswers[17],
-        B: pokeAnswers[12],
-        C: pokeAnswers[13],
-        D: pokeAnswers[1],
-        Correct: "D"
-    }
-];
+// var wikiQuestions = [];
+// var pokeQuestions = [
+//     {
+//         question: "Which pokemon evolves into Raichu?",
+//         A: pokeAnswers[0],
+//         B: pokeAnswers[4],
+//         C: pokeAnswers[6],
+//         D: pokeAnswers[8],
+//         Correct: "B"
+//     }, {
+//         question: "Which pokemon can use flamethrower?",
+//         A: pokeAnswers[2],
+//         B: pokeAnswers[5],
+//         C: pokeAnswers[15],
+//         D: pokeAnswers[19],
+//         Correct: "C"
+//     }, {
+//         question: "Which pokemon is famous for singing in the show?",
+//         A: pokeAnswers[18],
+//         B: pokeAnswers[7],
+//         C: pokeAnswers[10],
+//         D: pokeAnswers[11],
+//         Correct: "A"
+//     }, {
+//         question: "Which pokemon looks like a cobra?",
+//         A: pokeAnswers[3],
+//         B: pokeAnswers[2],
+//         C: pokeAnswers[14],
+//         D: pokeAnswers[16],
+//         Correct: "A"
+//     }, {
+//         question: "Which pokemon can fly?",
+//         A: pokeAnswers[17],
+//         B: pokeAnswers[12],
+//         C: pokeAnswers[13],
+//         D: pokeAnswers[1],
+//         Correct: "D"
+//     }
+// ];
 
-console.log(pokeQuestions);
+// console.log(pokeQuestions);
 
-var musicQuestions = [
-    {
-        question: "Fill in the blank: Drake's newest album is called Certified _____",
-        A: musicAnswers[9],
-        B: musicAnswers[8],
-        C: musicAnswers[6],
-        D: musicAnswers[3],
-        Correct: "A"
-    }, {
-        question: "Which Taylor Swift song famously references Romeo and Juliet?",
-        A: musicAnswers[2],
-        B: musicAnswers[8],
-        C: musicAnswers[6],
-        D: musicAnswers[3],
-        Correct: "C"
-    }, {
-        question: "Which of these is a song by Ed Sheeran?",
-        A: musicAnswers[7],
-        B: musicAnswers[5],
-        C: musicAnswers[0],
-        D: musicAnswers[3],
-        Correct: "B"
-    }, {
-        question: "Chief Keef rose to fame after this popular song:",
-        A: musicAnswers[9],
-        B: musicAnswers[8],
-        C: musicAnswers[7],
-        D: musicAnswers[3],
-        Correct: "D"
-    }, {
-        question: "This song by Ckay rose to fame on Tik Tok:",
-        A: musicAnswers[2],
-        B: musicAnswers[4],
-        C: musicAnswers[0],
-        D: musicAnswers[3],
-        Correct: "C"
-    }
-];
+// var musicQuestions = [
+//     {
+//         question: "Fill in the blank: Drake's newest album is called Certified _____",
+//         A: musicAnswers[9],
+//         B: musicAnswers[8],
+//         C: musicAnswers[6],
+//         D: musicAnswers[3],
+//         Correct: "A"
+//     }, {
+//         question: "Which Taylor Swift song famously references Romeo and Juliet?",
+//         A: musicAnswers[2],
+//         B: musicAnswers[8],
+//         C: musicAnswers[6],
+//         D: musicAnswers[3],
+//         Correct: "C"
+//     }, {
+//         question: "Which of these is a song by Ed Sheeran?",
+//         A: musicAnswers[7],
+//         B: musicAnswers[5],
+//         C: musicAnswers[0],
+//         D: musicAnswers[3],
+//         Correct: "B"
+//     }, {
+//         question: "Chief Keef rose to fame after this popular song:",
+//         A: musicAnswers[9],
+//         B: musicAnswers[8],
+//         C: musicAnswers[7],
+//         D: musicAnswers[3],
+//         Correct: "D"
+//     }, {
+//         question: "This song by Ckay rose to fame on Tik Tok:",
+//         A: musicAnswers[2],
+//         B: musicAnswers[4],
+//         C: musicAnswers[0],
+//         D: musicAnswers[3],
+//         Correct: "C"
+//     }
+// ];
 
-var questions = [];
-Array.prototype.push.apply(questions, pokeQuestions, musicQuestions);
+// var questions = [];
+// Array.prototype.push.apply(questions, pokeQuestions, musicQuestions);
 
 // var currentQuestion = 0;
 // var lastQuestion = questions.length - 1;
