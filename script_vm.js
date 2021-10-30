@@ -4,6 +4,27 @@ var pokeBtn = document.getElementById('pokemon-button');
 var musicBtn = document.getElementById('music-button');
 var nextBtn = document.querySelector('#nextQuestion');
 
+//timer
+
+var timerEl = document.getElementById('timer')
+
+
+
+
+
+var timer = 10
+
+var timeInterval = setInterval(function (){
+        timer = timer -1
+        timerEl.textContent = timer
+        if(timer <= 0){
+            clearInterval(timeInterval)
+        }
+    },1000)
+
+
+
+
 // URLs
 var wikiURL = "https://en.wikipedia.org/w/api.php?&origin=*&action=parse&format=json&page=Wonders_of_the_World&prop=wikitext&formatversion=2";
 var pokemonUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20";
@@ -130,47 +151,47 @@ wikiBtn.addEventListener('click', getWikiAPI);
 pokeBtn.addEventListener('click', getPokeAPI);
 musicBtn.addEventListener('click', getMusicAPI);
 
-// function displayQuestion() {
-//     if(currentQuestion <= lastQuestion) {
-//         var quest = questions[currentQuestion];
-//         questionEl.textContent = quest.question;
-//         choiceA.textContent = quest.choiceA;
-//         choiceB.textContent = quest.choiceB;
-//         choiceC.textContent = quest.choiceC;
-//     } else {
-//         clearInterval(timer); // need to change depending on what Juwon defined
-//         displayScore();
-//     }
-// }
+function displayQuestion() {
+  if(currentQuestion <= lastQuestion) {
+    var quest = questions[currentQuestion];
+    questionEl.textContent = quest.question;
+    choiceA.textContent = quest.choiceA;
+    choiceB.textContent = quest.choiceB;
+    choiceC.textContent = quest.choiceC;
+   } else {
+             clearInterval(timer); // need to change depending on what Juwon defined
+      displayScore();
+     }
+    }
 
-// function checkAnswer(answer) {
-//     if (answer == questions[currentQuestion].correct) {
-//         score++;
-//         // display "correct"
-//     } //else {
-//     //     display "wrong"
-//     // }
-//     count = 0;
-//     if (currentQuestion <= lastQuestion) {
-//         currentQuestion++;
-//         //displayQuestion(); don't run in case we want to click "next question" to move on
-//     } else {
-//         clearInterval(timer); // need to change depending on what Juwon defined
-//         displayScore();
-//     }
-// }
+    function checkAnswer(answer) {
+     if (answer == questions[currentQuestion].correct) {
+        score++; 
+        //display "correct"
+        //else {
+        //display "wrong"
+         //}
+     count = 0;
+     if (currentQuestion <= lastQuestion) {
+         currentQuestion++;
+        //displayQuestion(); don't run in case we want to click "next question" to move on
+    } else {
+        clearInterval(timer); // need to change depending on what Juwon defined
+        displayScore();
+    }
+ }
 
-// function nextQuestion() {
-//     if (currentQuestion <= lastQuestion) {
-//         currentQuestion++;
-//         displayQuestion();
-//     } else {
-//         clearInterval(timer);
-//         displayScore();
-//     }
-// }
-
-
+ function nextQuestion() {
+     if (currentQuestion <= lastQuestion) {
+        currentQuestion++;
+        displayQuestion();
+    } else {
+       clearInterval(timer);
+        displayScore();
+    }
+ }
 
 
 
+
+    }
