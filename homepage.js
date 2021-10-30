@@ -2,7 +2,8 @@ var addPlayerEl = document.getElementById('addPlayer')
 var playerBoxEl = document.querySelector('.playerBox')
 var playBtnEl = document.getElementById('playBtn')
 var newPlayerEl = document.getElementById('newPlayer')
-
+//array
+var playerList = [];
 
 addPlayerEl.addEventListener('click', addPlayer)
 playBtnEl.addEventListener('click', playBtn)
@@ -31,12 +32,13 @@ function addPlayer(e){
 
 function userInput(){
     var inputEl = document.querySelector('#text-input').value
-    var playerList = [];
+    
     playerList.push(inputEl)
-    window.localStorage.playerList = playerList;
+    window.localStorage.playerList = JSON.stringify(playerList);
     console.log(localStorage)
     console.log(playerList) 
+    
 
     
-   
 }
+

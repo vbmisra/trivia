@@ -1,9 +1,13 @@
 var timerEl = document.getElementById('timer')
 
-timerEl.append(countDown)
 
 
-var timer = 60
+
+
+var timer = 600
+
 setInterval(function (){
-        timer--
+        timer = timer -1
+        timerEl.textContent = timer
+        
     },1000)
