@@ -1,13 +1,15 @@
 // Buttons
-var wikiBtn = document.getElementById('wiki-button');
-var pokeBtn = document.getElementById('pokemon-button');
-var musicBtn = document.getElementById('music-button');
-var nextBtn = document.querySelector('#nextQuestion');
+//var wikiBtn = document.getElementById('wiki-button');
+//var pokeBtn = document.getElementById('pokemon-button');
+//var musicBtn = document.getElementById('music-button');
+//var nextBtn = document.querySelector('#nextQuestion');
 var choiceA = document.querySelector('#ansBtn1');
 var choiceB = document.querySelector('#ansBtn2');
 var choiceC = document.querySelector('#ansBtn3');
 var choiceD = document.querySelector('#ansBtn4');
 var questionEl = document.querySelector('#questionTitle');
+var nextBtn = document.querySelector('#nextQuestion');
+var alertEl = document.querySelector('#alertUser');
 
 // URLs
 var wikiURL = "https://en.wikipedia.org/w/api.php?&origin=*&action=parse&format=json&page=Wonders_of_the_World&prop=wikitext&formatversion=2";
@@ -16,6 +18,14 @@ var musicURL = "https://shazam.p.rapidapi.com/auto-complete?term=love&locale=en-
 
 var pokeAnswers = [];
 var musicAnswers = [];
+var pokeIndex = 0;
+var musicIndex = 0;
+var currentQuestion = 0;
+var lastQuestion = 10;
+var playerOneScore = 0;
+var playerTwoScore = 0;
+
+nextBtn.addEventListener('click', nextQuestion);
 
 function getWikiAPI() {
     console.log("successful click");
@@ -52,7 +62,9 @@ function getWikiAPI() {
             musicAnswers.push(data.hints[i].term);
         }
         console.log(musicAnswers);
-        makeMusicQuestions(musicAnswers);
+        if (currentQuestion < 5) {
+        makeMusicQuestions(musicAnswers, musicIndex);
+        }
     })
     // .catch(err => {
     //     console.error(err);
@@ -71,12 +83,14 @@ function getWikiAPI() {
                 pokeAnswers.push(data.results[i].name);
             }
             console.log(pokeAnswers);
-            makePokemonQuestions(pokeAnswers);
+            if (currentQuestion >= 5 && currentQuestion < 10) {
+            makePokemonQuestions(pokeAnswers, pokeIndex);
+            }
         })
         //return pokeAnswers;
 //}
 
-function makePokemonQuestions(arrPokemonNames){
+function makePokemonQuestions(arrPokemonNames, pokeIndex){
     var pokeQuestions = [
         {
             question: "Which pokemon evolves into Raichu?",
@@ -84,52 +98,43 @@ function makePokemonQuestions(arrPokemonNames){
             B: arrPokemonNames[4],
             C: arrPokemonNames[6],
             D: arrPokemonNames[8],
-            Correct: "B"
         }, {
             question: "Which pokemon can use flamethrower?",
             A: arrPokemonNames[2],
             B: arrPokemonNames[5],
-            C: arrPokemonNames[15],
+            C: arrPokemonNames[17],
             D: arrPokemonNames[19],
-            Correct: "C"
         }, {
             question: "Which pokemon is famous for singing in the show?",
             A: arrPokemonNames[18],
             B: arrPokemonNames[7],
             C: arrPokemonNames[10],
             D: arrPokemonNames[11],
-            Correct: "A"
         }, {
             question: "Which pokemon looks like a cobra?",
             A: arrPokemonNames[3],
             B: arrPokemonNames[2],
             C: arrPokemonNames[14],
             D: arrPokemonNames[16],
-            Correct: "A"
         }, {
             question: "Which pokemon can fly?",
             A: arrPokemonNames[17],
             B: arrPokemonNames[12],
             C: arrPokemonNames[13],
             D: arrPokemonNames[1],
-            Correct: "D"
         }
     ];
-    if(currentQuestion <= lastQuestion) {
-        questionEl.textContent = pokeQuestions[index].question;
-        choiceA.textContent = pokeQuestions[index].A;
-        choiceB.textContent = pokeQuestions[index].B;
-        choiceC.textContent = pokeQuestions[index].C;
-        choiceD.textContent = pokeQuestions[index].D;
-    } else {
-        clearInterval(timer); // need to change depending on what Juwon defined
-        displayScore();
-    }
+    
+    questionEl.textContent = pokeQuestions[pokeIndex].question;
+    choiceA.textContent = pokeQuestions[pokeIndex].A;
+    choiceB.textContent = pokeQuestions[pokeIndex].B;
+    choiceC.textContent = pokeQuestions[pokeIndex].C;
+    choiceD.textContent = pokeQuestions[pokeIndex].D;
     console.log("sjhdkjshkdjh")
     console.log(pokeQuestions)
 }
 
-function makeMusicQuestions(arrMusic){
+function makeMusicQuestions(arrMusic, musicIndex){
     var musicQuestions = [
         {
             question: "Fill in the blank: Drake's newest album is called Certified _____",
@@ -137,135 +142,180 @@ function makeMusicQuestions(arrMusic){
             B: arrMusic[8],
             C: arrMusic[6],
             D: arrMusic[3],
-            Correct: "A"
         }, {
-            question: "Which Taylor Swift song famously references Romeo and Juliet?",
+            question: "Which song is by the Jonas Brothers?",
             A: arrMusic[2],
             B: arrMusic[8],
             C: arrMusic[6],
             D: arrMusic[3],
-            Correct: "C"
         }, {
             question: "Which of these is a song by Ed Sheeran?",
             A: arrMusic[7],
             B: arrMusic[5],
             C: arrMusic[0],
             D: arrMusic[3],
-            Correct: "B"
         }, {
             question: "Chief Keef rose to fame after this popular song:",
             A: arrMusic[9],
             B: arrMusic[8],
             C: arrMusic[7],
             D: arrMusic[3],
-            Correct: "D"
         }, {
             question: "This song by Ckay rose to fame on Tik Tok:",
             A: arrMusic[2],
             B: arrMusic[4],
             C: arrMusic[0],
             D: arrMusic[3],
-            Correct: "C"
         }
     ];
-    if(currentQuestion <= lastQuestion) {
-        questionEl.textContent = musicQuestions[index].question;
-        choiceA.textContent = musicQuestions[index].A;
-        choiceB.textContent = musicQuestions[index].B;
-        choiceC.textContent = musicQuestions[index].C;
-        choiceD.textContent = musicQuestions[index].D;
-    } else {
-        clearInterval(timer); // need to change depending on what Juwon defined
-        displayScore();
-    }
+    
+    questionEl.textContent = musicQuestions[musicIndex].question;
+    choiceA.textContent = musicQuestions[musicIndex].A;
+    choiceB.textContent = musicQuestions[musicIndex].B;
+    choiceC.textContent = musicQuestions[musicIndex].C;
+    choiceD.textContent = musicQuestions[musicIndex].D;
+
     console.log("sjhdkjshkdjh")
     console.log(musicQuestions)
 }
+
+function nextQuestion() {
+    currentQuestion++;
+    if(currentQuestion < 5) {
+        musicIndex++;
+        makeMusicQuestions(musicAnswers, musicIndex);
+    } else if (currentQuestion >= 5 && currentQuestion < 10) {
+        makePokemonQuestions(pokeAnswers, pokeIndex);
+        pokeIndex++;
+    } else {
+        window.localStorage.setItem('Player 1 Score', playerOneScore);
+        window.localStorage.setItem('Player 2 Score', playerTwoScore);
+        location.href="index_vm.html";
+    }
+}
+
+function checkAnswer(answer) {
+    if (currentQuestion < 5) {
+        if (answer == musicAnswerKey[musicIndex].Correct) {
+            alertEl.textContent = 'Correct!'
+            playerOneScore++;
+        } else {
+            alertEl.textContent = 'Wrong!'
+        }
+    } else if (currentQuestion > 4 && currentQuestion < 10) {
+        if (answer == pokeAnswerKey[pokeIndex - 1].Correct) {
+            alertEl.textContent = 'Correct!'
+            playerTwoScore++;
+        } else {
+            console.log(pokeAnswerKey[pokeIndex - 1].Correct)
+            alertEl.textContent = 'Wrong!'
+        }
+    }
+    // if (answer == questions[currentQuestion].correct) {
+    //     score++;
+    //     // display "correct"
+    // } //else {
+    // //     display "wrong"
+    // // }
+    // count = 0;
+    // if (currentQuestion <= lastQuestion) {
+    //     currentQuestion++;
+    //     //displayQuestion(); don't run in case we want to click "next question" to move on
+    // } else {
+    //     clearInterval(timer); // need to change depending on what Juwon defined
+    //     displayScore();
+    // }
+}
+
+function test() {
+    //event.preventDefault();
+    console.log('hello');
+}
+
 //getWikiAPI();
 //getPokeAPI();
 //getMusicAPI();
 //console.log(getPokeAPI());
 // questions
 // var wikiQuestions = [];
-// var pokeQuestions = [
-//     {
-//         question: "Which pokemon evolves into Raichu?",
-//         A: pokeAnswers[0],
-//         B: pokeAnswers[4],
-//         C: pokeAnswers[6],
-//         D: pokeAnswers[8],
-//         Correct: "B"
-//     }, {
-//         question: "Which pokemon can use flamethrower?",
-//         A: pokeAnswers[2],
-//         B: pokeAnswers[5],
-//         C: pokeAnswers[15],
-//         D: pokeAnswers[19],
-//         Correct: "C"
-//     }, {
-//         question: "Which pokemon is famous for singing in the show?",
-//         A: pokeAnswers[18],
-//         B: pokeAnswers[7],
-//         C: pokeAnswers[10],
-//         D: pokeAnswers[11],
-//         Correct: "A"
-//     }, {
-//         question: "Which pokemon looks like a cobra?",
-//         A: pokeAnswers[3],
-//         B: pokeAnswers[2],
-//         C: pokeAnswers[14],
-//         D: pokeAnswers[16],
-//         Correct: "A"
-//     }, {
-//         question: "Which pokemon can fly?",
-//         A: pokeAnswers[17],
-//         B: pokeAnswers[12],
-//         C: pokeAnswers[13],
-//         D: pokeAnswers[1],
-//         Correct: "D"
-//     }
-// ];
+var pokeAnswerKey = [
+    {
+        question: "Which pokemon evolves into Raichu?",
+        A: pokeAnswers[0],
+        B: pokeAnswers[4],
+        C: pokeAnswers[6],
+        D: pokeAnswers[8],
+        Correct: "B"
+    }, {
+        question: "Which pokemon can use flamethrower?",
+        A: pokeAnswers[2],
+        B: pokeAnswers[5],
+        C: pokeAnswers[15],
+        D: pokeAnswers[19],
+        Correct: "C"
+    }, {
+        question: "Which pokemon is famous for singing in the show?",
+        A: pokeAnswers[18],
+        B: pokeAnswers[7],
+        C: pokeAnswers[10],
+        D: pokeAnswers[11],
+        Correct: "A"
+    }, {
+        question: "Which pokemon looks like a cobra?",
+        A: pokeAnswers[3],
+        B: pokeAnswers[2],
+        C: pokeAnswers[14],
+        D: pokeAnswers[16],
+        Correct: "A"
+    }, {
+        question: "Which pokemon can fly?",
+        A: pokeAnswers[17],
+        B: pokeAnswers[12],
+        C: pokeAnswers[13],
+        D: pokeAnswers[1],
+        Correct: "D"
+    }
+];
 
-// console.log(pokeQuestions);
 
-// var musicQuestions = [
-//     {
-//         question: "Fill in the blank: Drake's newest album is called Certified _____",
-//         A: musicAnswers[9],
-//         B: musicAnswers[8],
-//         C: musicAnswers[6],
-//         D: musicAnswers[3],
-//         Correct: "A"
-//     }, {
-//         question: "Which Taylor Swift song famously references Romeo and Juliet?",
-//         A: musicAnswers[2],
-//         B: musicAnswers[8],
-//         C: musicAnswers[6],
-//         D: musicAnswers[3],
-//         Correct: "C"
-//     }, {
-//         question: "Which of these is a song by Ed Sheeran?",
-//         A: musicAnswers[7],
-//         B: musicAnswers[5],
-//         C: musicAnswers[0],
-//         D: musicAnswers[3],
-//         Correct: "B"
-//     }, {
-//         question: "Chief Keef rose to fame after this popular song:",
-//         A: musicAnswers[9],
-//         B: musicAnswers[8],
-//         C: musicAnswers[7],
-//         D: musicAnswers[3],
-//         Correct: "D"
-//     }, {
-//         question: "This song by Ckay rose to fame on Tik Tok:",
-//         A: musicAnswers[2],
-//         B: musicAnswers[4],
-//         C: musicAnswers[0],
-//         D: musicAnswers[3],
-//         Correct: "C"
-//     }
-// ];
+var musicAnswerKey = [
+    {
+        question: "Fill in the blank: Drake's newest album is called Certified _____",
+        A: musicAnswers[9],
+        B: musicAnswers[8],
+        C: musicAnswers[6],
+        D: musicAnswers[3],
+        Correct: "B"
+    }, {
+        question: "Which song is by the Jonas Brothers?",
+        A: musicAnswers[2],
+        B: musicAnswers[8],
+        C: musicAnswers[6],
+        D: musicAnswers[3],
+        Correct: "C"
+    }, {
+        question: "Which of these is a song by Ed Sheeran?",
+        A: musicAnswers[7],
+        B: musicAnswers[5],
+        C: musicAnswers[0],
+        D: musicAnswers[3],
+        Correct: "B"
+    }, {
+        question: "Chief Keef rose to fame after this popular song:",
+        A: musicAnswers[9],
+        B: musicAnswers[8],
+        C: musicAnswers[7],
+        D: musicAnswers[3],
+        Correct: "D"
+    }, {
+        question: "This song by Ckay rose to fame on Tik Tok:",
+        A: musicAnswers[2],
+        B: musicAnswers[4],
+        C: musicAnswers[0],
+        D: musicAnswers[3],
+        Correct: "C"
+    }
+];
 
 // var questions = [];
 // Array.prototype.push.apply(questions, pokeQuestions, musicQuestions);
@@ -304,22 +354,6 @@ function makeMusicQuestions(arrMusic){
 //     }
 // }
 
-// function checkAnswer(answer) {
-//     if (answer == questions[currentQuestion].correct) {
-//         score++;
-//         // display "correct"
-//     } //else {
-//     //     display "wrong"
-//     // }
-//     count = 0;
-//     if (currentQuestion <= lastQuestion) {
-//         currentQuestion++;
-//         //displayQuestion(); don't run in case we want to click "next question" to move on
-//     } else {
-//         clearInterval(timer); // need to change depending on what Juwon defined
-//         displayScore();
-//     }
-// }
 
 // function nextQuestion() {
 //     if (currentQuestion <= lastQuestion) {
