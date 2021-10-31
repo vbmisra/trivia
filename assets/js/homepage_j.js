@@ -9,7 +9,7 @@ addPlayerEl.addEventListener('click', addPlayer)
 playBtnEl.addEventListener('click', playBtn)
 
 function playBtn(e){
-    location.href = "/Users/juwonoh/trivia/questions.html"
+    location.href = "./questions.html"
 }
 
 function addPlayer(e){

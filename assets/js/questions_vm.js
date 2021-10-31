@@ -6,6 +6,7 @@ var choiceD = document.querySelector('#ansBtn4');
 var questionEl = document.querySelector('#questionTitle');
 var nextBtn = document.querySelector('#nextQuestion');
 var alertEl = document.querySelector('#alertUser');
+var timerEl = document.getElementById('timer');
 
 // API URLs
 var wikiURL = "https://en.wikipedia.org/w/api.php?&origin=*&action=parse&format=json&page=Wonders_of_the_World&prop=wikitext&formatversion=2";
@@ -22,8 +23,18 @@ var musicIndex = 0;
 var currentQuestion = 0;
 var playerOneScore = 0;
 var playerTwoScore = 0;
+var timer = 30;
 
 nextBtn.addEventListener('click', nextQuestion);
+
+var timeInterval = setInterval(function (){
+    timer = timer -1
+    timerEl.textContent = timer
+    if(timer <= 0){
+        clearInterval(timeInterval)
+        location.href='./results.html'
+    }
+},1000)
 
 // function to retrieve wikipedia API
 function getWikiAPI() {
@@ -185,7 +196,7 @@ function nextQuestion() {
     } else {
         window.localStorage.setItem('Player 1 Score', playerOneScore);
         window.localStorage.setItem('Player 2 Score', playerTwoScore);
-        location.href="index_vm.html";
+        location.href="./results.html";
     }
 }
 
