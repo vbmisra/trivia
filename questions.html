@@ -17,26 +17,27 @@
     <title>Trivia Quest Game</title>
 </head>
 <body>
-    <!-- Show the questions-->
-    <section id="questsContainer" class="">
-        
+    
+    <section id="questsContainer">
+        <!-- Show the timer and questions-->
         <div id="timer" class="title has-text-centered "><i class="fas fa-clock"></i>Time:</div>
-        <h2 class="questions title is-2 has-text-centered">Question: <span id="questionTitle" class="title is-3 has-text-centered">Question placeholder</span></h2>
+        <h2 class="questions title is-2 has-text-centered">Question: 
+        <span id="questionTitle" class="title is-3 has-text-centered">Question placeholder</span></h2>
         <div id="answerButtons"class="subtitle is-3 has-text-centered">
-            <button id="" class="button is-large  customAnsBtns" type="button">Answers placeholder</button>
-            <button id="" class="button is-large  customAnsBtns" type="button">Answers placeholder</button>
-            <button id="" class="button is-large  customAnsBtns" type="button">Answers placeholder</button>
-            <button id="" class="button is-large  customAnsBtns" type="button">Answers placeholder</button>
+            <button id="ansBtn1" class="button is-large customAnsBtns" type="button">Ans Placeholder</button>
+            <button id="ansBtn2" class="button is-large customAnsBtns" type="button">Ans Placeholder</button>
+            <button id="ansBtn3" class="button is-large customAnsBtns" type="button">Ans Placeholder</button>
+            <button id="ansBtn4" class="button is-large customAnsBtns" type="button">Ans Placeholder</button>
         </div>
 
 
-
+        <!-- Alert the users of the correct or wrong answers -->
         <div id="alertUser"class="subtitle is-4 has-text-centered">Alert user placeholder</div>
-       
+        <!-- Show the next question -->
         <div class="has-text-centered" >
-        <button id="nextQuestion" class="button is-large is-primary" type="button">Next Question</button>
+            <button id="nextQuestion" class="button is-large is-primary" type="button">Next Question</button>
         </div>
     </section>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/hekmat.js"></script>
 </body>
 </html>
