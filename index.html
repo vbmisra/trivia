@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link
     rel="stylesheet"
@@ -19,27 +18,29 @@
 <body>
 
     <section id="startGame">
-        <div id="box" class="">
+        <div id="box">
             <h1 class="title is-1 has-text-centered">Welcome to Trivia Quest Game!</h1>
-        
             <!-- Players who play the game -->
             <div class="players">  
                 <div class="playerBox">
                     <div class="playerEl">
-                        <h2 class="title customTitle">Player</h2>
+                        <h2 id="playerNameTitle"class="title">Player</h2>
                         <div id="inputContainer">
-                            <input id="text-input" class="input customInput" type="text" placeholder="Enter Your Name">
+                            <input id="text-input" class="input customInput" 
+                            type="text" placeholder="Enter Your Name">
                         </div>
                     </div>
                 </div>
-
+                <!-- Players name list -->
                 <div id="newPlayerContianer">
-                <div id="newPlayer" class="title is-4"></div>
+                    <div id="newPlayer" class="title is-4"></div>
                 </div>
 
                 <br>
+                <!-- Add player name -->
                 <div class="has-text-centered" >
-                    <button id="addPlayer" class="button is-large is-primary" type="button"><i id="addPlayerIcon" class="fas fa-user-plus"></i>Add Player</button>
+                    <button id="addPlayer" class="button is-large is-primary" type="button">
+                    <i id="addPlayerIcon" class="fas fa-user-plus"></i>Add Player</button>
                 </div>
             </div>
 
@@ -47,14 +48,12 @@
             <!-- Categories of questions -->
             <div id="questsCategories" class="">
                 <h2 class="title is-2 has-text-centered">Categories</h2>
-          
 
                 <div id="categoriesBox"class="subtitle is-3 has-text-centered">
-                    <button id="category1" class="button is-large  categoriesBtns" type="button">MOVIES</button>
-                    <button id="category2" class="button is-large  categoriesBtns" type="button">GEOGRAPHY</button>
-                    <button id="category3" class="button is-large  categoriesBtns" type="button">TBD LATER</button>
+                    <button id="category1" class="button is-large categoriesBtns" type="button">MOVIES</button>
+                    <button id="category2" class="button is-large categoriesBtns" type="button">GEOGRAPHY</button>
+                    <button id="category3" class="button is-large categoriesBtns" type="button">TBD LATER</button>
                 </div>
-
 
                 <!-- Starts the game -->
                 <div class="has-text-centered" >
