@@ -29,7 +29,7 @@ nextBtn.addEventListener('click', nextQuestion);
 
 var timeInterval = setInterval(function (){
     timer = timer -1
-    timerEl.textContent = timer
+    timerEl.textContent = "Time: " + timer
     if(timer <= 0){
         clearInterval(timeInterval)
         location.href='./results.html'
