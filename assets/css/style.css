@@ -89,20 +89,20 @@ body {
     transition: all 0.3s ease-in-out;
     background-color: #9b4007;
 }
-#showQuestBox{
+
+#showQuestBox {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #showQuestions {
     background: linear-gradient(#dd8306, #e6b878);
     padding-top: 3%;
     padding-bottom: 3%;
     width: 72%;
-    height: 150px;
-   
+    height: 150px;  
 }
-
 
 /* Set the answers buttons style */
 .customAnsBtns {
@@ -127,7 +127,7 @@ body {
 }
 
 #tableTitle {
-    background: linear-gradient(#d58553, #e6b878);
+    background: linear-gradient(#dd8306, #e6b878);
     width: 60%;
     border-radius: 10px;
 }
@@ -139,7 +139,7 @@ body {
 #playAgainBtn, #homeBtn {
     margin: 10px;
 }
-/* For ipod or similar devices with screen size upto 992 pixel */
+/* For ipad or similar devices with screen size upto 992 pixel */
 @media screen and (max-width: 992px) {
     body {
         display: flex;
@@ -253,9 +253,6 @@ body {
     #questionTitle, #results h2 {
         font-size: 24px;
     }
-    
-
-
 
     #nextQuestion {
         font-size: 16px;
