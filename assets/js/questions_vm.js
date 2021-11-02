@@ -23,7 +23,7 @@ var musicIndex = 0;
 var currentQuestion = 0;
 var playerOneScore = 0;
 var playerTwoScore = 0;
-var timer = 30;
+var timer = 6000;
 
 nextBtn.addEventListener('click', nextQuestion);
 
@@ -198,6 +198,8 @@ function nextQuestion() {
         window.localStorage.setItem('Player 2 Score', playerTwoScore);
         location.href="./results.html";
     }
+    removeCorrect()
+
 }
 
 // checks answer based on user click
@@ -263,3 +265,9 @@ var musicAnswerKey = [
         Correct: "C"
     }
 ];
+
+//Correct and Wrong removable function.
+function removeCorrect(){
+    alertEl.style.display = "none"
+    
+}
