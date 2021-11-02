@@ -7,6 +7,9 @@ var player2Pos;
 var player1Name = window.localStorage.getItem('player1')
 var player2Name = window.localStorage.getItem('player2')
 
+var homeBtnEl = document.getElementById('homeBtn')
+var playBtnEl = document.getElementById('playAgainBtn')
+
 if(player1Score > player2Score)
 {
     player1Pos = 1;
@@ -55,3 +58,17 @@ function showName1(){
 function showName2(){
     return player2Name;
 }
+
+function homeBtn(){
+    location.href = "./index.html";
+}
+
+function playBtn(){
+    location.href = "./questions.html";
+}
+
+playBtnEl.addEventListener('click', playBtn)
+homeBtnEl.addEventListener('click', homeBtn)
+
+
+
