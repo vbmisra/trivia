@@ -6,63 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Trivia Quest Game</title>
 </head>
 <body>
-
-    <section id="startGame">
-        <div id="box">
-            <h1 class="title is-1 has-text-centered">Welcome to Trivia Quest Game!</h1>
-            <!-- Players who play the game -->
-            <div class="players">  
-                <div class="playerBox">
-                    <div class="playerEl">
-                        <h2 id="playerNameTitle"class="title">Player</h2>
-                        <div id="inputContainer">
-                            <input id="text-input" class="input customInput" 
-                            type="text" placeholder="Enter Your Name">
-                        </div>
-                    </div>
-                </div>
-                <!-- Players name list -->
-                <div id="newPlayerContianer">
-                    <div id="newPlayer" class="title is-4"></div>
-                </div>
-
-                <br>
-                <!-- Add player name -->
-                <div class="has-text-centered" >
-                    <button id="addPlayer" class="button is-large is-primary" type="button">
-                    <i id="addPlayerIcon" class="fas fa-user-plus"></i>Add Player</button>
-                </div>
-            </div>
-
-            <br>
-            <!-- Categories of questions -->
-            <div id="questsCategories" class="">
-                <h2 class="title is-2 has-text-centered">Categories</h2>
-
-                <div id="categoriesBox"class="subtitle is-3 has-text-centered">
-                    <button id="category1" class="button is-large categoriesBtns" type="button">MOVIES</button>
-                    <button id="category2" class="button is-large categoriesBtns" type="button">GEOGRAPHY</button>
-                    <button id="category3" class="button is-large categoriesBtns" type="button">TBD LATER</button>
-                </div>
-
-                <!-- Starts the game -->
-                <div class="has-text-centered" >
-                    <button id="playBtn" class="button is-large is-primary" type="button">Play Now</button>
-                </div>
-            </div>
+    
+    <section id="results">
+        <h2 class="title is-2 has-text-centered">Results</h2>
+    
+        <!-- Show the results table -->
+        <div class="customTable">
+            <table id="tableTitle" class="table has-text-centered ">
+                <thead>
+                    <!-- table header -->
+                    <tr class="title is-4">
+                        <th><abbr title="Position">Pos</abbr></th>
+                        <th>Player</th>
+                        <th><abbr title="Correct answers">Correct</abbr></th>
+                    </tr>
+                </thead>
+                <!-- table body -->
+                <tbody id="tableData">
+                    <tr class="subtitle">
+                    <td><span id="player1Pos"><script>showPos1()</script></span></td>
+                    <td><span id="player1Name"><script>showScore1()</script></span></td>
+                    <td><span id="playerNameResult"><script>showCorrect1()</script></span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        
+        <br><br>
+
+        <!-- Buttons to play again and go to home page -->
+        <div class="has-text-centered" >
+            <button id="playAgainBtn" class="button is-large is-primary" type="button">Play Again</button>
+            <button id="homeBtn" class="button is-large is-primary" type="button">Home</button>
+        </div>    
     </section>
-    <script src="./assets/js/results_df.js"></script>
+    
+    <script src="results_df.js"></script>
     <script src="./assets/js/results_j.js"></script>
 </body>
 </html>
