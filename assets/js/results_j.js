@@ -1,4 +1,4 @@
-var firstPlaceEl = document.getElementById('firstPlace')
+var firstPlaceEl = document.getElementById('player1name')
 var secondPlaceEl = document.getElementById('secondPlace')
 
 //2 player max
