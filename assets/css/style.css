@@ -69,8 +69,8 @@ body {
 
 /* Categories button change color when mouse hover over them */
 .categoriesBtns:hover {
-    background-color: #bd510d;
-    transition: all 0.3s ease-in-out;
+    /* background-color: #bd510d;
+    transition: all 0.3s ease-in-out; */
     color: whitesmoke;
 }
 
@@ -236,8 +236,8 @@ body {
 
     #showQuestions {
         height: 140px;
-       
     }
+    
     #ansBtn1, #ansBtn2, #ansBtn3, #ansBtn4 {
         width: 80%;
         margin: 5px;
