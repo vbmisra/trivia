@@ -20,25 +20,29 @@
     
     <section id="questsContainer">
         <!-- Show the timer and questions-->
-        <div id="timer" class="title has-text-centered "><i class="fas fa-clock"></i>Time:</div>
-        <h2 class="questions title is-2 has-text-centered">Question: 
-        <span id="questionTitle" class="title is-3 has-text-centered">Question placeholder</span></h2>
+        <div id="timer" class="title has-text-centered "><i class="fas fa-clock"></i></div>
+        <div id="showQuestBox">
+            <div id="showQuestions" class="box">
+                <h2 class="questions">
+                <span id="questionTitle" class="title is-3"></span></h2>
+            </div>
+        </div>
+
         <div id="answerButtons"class="subtitle is-3 has-text-centered">
-            <button id="ansBtn1" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('A')">Ans Placeholder</button>
-            <button id="ansBtn2" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('B')">Ans Placeholder</button>
-            <button id="ansBtn3" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('C')">Ans Placeholder</button>
-            <button id="ansBtn4" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('D')">Ans Placeholder</button>
+            <button id="ansBtn1" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('A')"></button>
+            <button id="ansBtn2" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('B')"></button>
+            <button id="ansBtn3" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('C')"></button>
+            <button id="ansBtn4" class="button is-large customAnsBtns" type="button" onclick="checkAnswer('D')"></button>
         </div>
 
 
         <!-- Alert the users of the correct or wrong answers -->
-        <div id="alertUser"class="subtitle is-4 has-text-centered">Alert user placeholder</div>
+        <div id="alertUser"class="subtitle is-4 has-text-centered"></div>
         <!-- Show the next question -->
         <div class="has-text-centered" >
             <button id="nextQuestion" class="button is-large is-primary" type="button">Next Question</button>
         </div>
     </section>
-    <script src="./assets/js/hekmat.js"></script>
     <script src="./assets/js/questions_vm.js"></script>
 </body>
 </html>

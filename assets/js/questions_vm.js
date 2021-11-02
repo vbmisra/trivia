@@ -29,7 +29,7 @@ nextBtn.addEventListener('click', nextQuestion);
 
 var timeInterval = setInterval(function (){
     timer = timer -1
-    timerEl.textContent = timer
+    timerEl.textContent = "Time: " + timer
     if(timer <= 0){
         clearInterval(timeInterval)
         location.href='./results.html'
@@ -145,13 +145,13 @@ function makeMusicQuestions(arrMusic, musicIndex){
             question: "Fill in the blank: Drake's newest album is called Certified _____",
             A: arrMusic[9],
             B: arrMusic[8],
-            C: arrMusic[6],
+            C: arrMusic[2],
             D: arrMusic[3],
         }, {
             question: "Which song is by the Jonas Brothers?",
             A: arrMusic[2],
             B: arrMusic[8],
-            C: arrMusic[6],
+            C: arrMusic[9],
             D: arrMusic[3],
         }, {
             question: "Which of these is a song by Ed Sheeran?",

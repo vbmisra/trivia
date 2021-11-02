@@ -69,8 +69,8 @@ body {
 
 /* Categories button change color when mouse hover over them */
 .categoriesBtns:hover {
-    background-color: #bd510d;
-    transition: all 0.3s ease-in-out;
+    /* background-color: #bd510d;
+    transition: all 0.3s ease-in-out; */
     color: whitesmoke;
 }
 
@@ -90,9 +90,20 @@ body {
     background-color: #9b4007;
 }
 
-#playAgainBtn, #homeBtn {
-    margin: 10px;
+#showQuestBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#showQuestions {
+    background: linear-gradient(#dd8306, #e6b878);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 72%;
+    height: 150px;  
+}
+
 /* Set the answers buttons style */
 .customAnsBtns {
     border: 3px solid #e6b878;
@@ -116,7 +127,7 @@ body {
 }
 
 #tableTitle {
-    background: linear-gradient(#d58553, #e6b878);
+    background: linear-gradient(#dd8306, #e6b878);
     width: 60%;
     border-radius: 10px;
 }
@@ -125,7 +136,10 @@ body {
     background-color: #e6b878;
 }
 
-/* For ipod or similar devices with screen size upto 992 pixel */
+#playAgainBtn, #homeBtn {
+    margin: 10px;
+}
+/* For ipad or similar devices with screen size upto 992 pixel */
 @media screen and (max-width: 992px) {
     body {
         display: flex;
@@ -172,6 +186,11 @@ body {
         width: 60%;
     }   
 
+    #showQuestions {
+        width: 80%;
+        height: 160px;
+    }
+
     .customAnsBtns {
         padding: 5%;
         width: 80%;
@@ -215,6 +234,10 @@ body {
         border: 2px solid #e6b878;
     }
 
+    #showQuestions {
+        height: 140px;
+    }
+    
     #ansBtn1, #ansBtn2, #ansBtn3, #ansBtn4 {
         width: 80%;
         margin: 5px;
@@ -227,7 +250,7 @@ body {
         font-size: 20px;
     }
 
-    #questsContainer h2, #questionTitle, #results h2 {
+    #questionTitle, #results h2 {
         font-size: 24px;
     }
 
@@ -258,6 +281,14 @@ body {
 }
 /* For smaller screen */
 @media screen and (max-width: 420px) {
+
+    #questionTitle {
+        font-size: 20px;
+    }
+
+    #showQuestions {
+        height: 120px;
+    }
     #tableTitle th {
         font-size: 14px;
     }
