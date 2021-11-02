@@ -198,7 +198,7 @@ function nextQuestion() {
         window.localStorage.setItem('Player 2 Score', playerTwoScore);
         location.href="./results.html";
     }
-    removeCorrect()
+    removeAlert()
 
 }
 
@@ -267,7 +267,7 @@ var musicAnswerKey = [
 ];
 
 //Correct and Wrong removable function.
-function removeCorrect(){
+function removeAlert(){
     alertEl.style.display = "none"
     
 }
