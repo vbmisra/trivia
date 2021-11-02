@@ -63,10 +63,10 @@ function showName2(){
 playBtnEl.addEventListener('click', playBtn)
 homeBtnEl.addEventListener('click', homeBtn)
 
-function homeBtn(e){
+function homeBtn(){
     location.href = "./index.html";
 }
 
-function playBtn(e){
+function playBtn(){
     location.href = "./questions.html";
 }
