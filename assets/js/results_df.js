@@ -59,10 +59,6 @@ function showName2(){
     return player2Name;
 }
 
-
-playBtnEl.addEventListener('click', playBtn)
-homeBtnEl.addEventListener('click', homeBtn)
-
 function homeBtn(){
     location.href = "./index.html";
 }
@@ -70,3 +66,9 @@ function homeBtn(){
 function playBtn(){
     location.href = "./questions.html";
 }
+
+playBtnEl.addEventListener('click', playBtn)
+homeBtnEl.addEventListener('click', homeBtn)
+
+
+
