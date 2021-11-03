@@ -34,8 +34,8 @@ function userInput(){
     var inputEl = document.querySelector('#text-input').value
     
     playerList.push(inputEl)
-    window.localStorage.player1 = JSON.stringify(playerList[0]);
-    window.localStorage.player2 = JSON.stringify(playerList[1]);
+    window.localStorage.player1 = playerList[0];
+    window.localStorage.player2 = playerList[1];
     console.log(localStorage)
     console.log(playerList) 
     
