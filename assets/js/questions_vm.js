@@ -23,7 +23,7 @@ var musicIndex = 0;
 var currentQuestion = 0;
 var playerOneScore = 0;
 var playerTwoScore = 0;
-var timer = 6000;
+var timer = 60;
 
 nextBtn.addEventListener('click', nextQuestion);
 
@@ -198,8 +198,6 @@ function nextQuestion() {
         window.localStorage.setItem('Player 2 Score', playerTwoScore);
         location.href="./results.html";
     }
-    removeAlert()
-
 }
 
 // checks answer based on user click
@@ -266,8 +264,3 @@ var musicAnswerKey = [
     }
 ];
 
-//Correct and Wrong removable function.
-function removeAlert(){
-    alertEl.style.display = "none"
-    
-}

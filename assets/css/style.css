@@ -108,7 +108,7 @@ body {
 .customAnsBtns {
     border: 3px solid #e6b878;
     background-color: #dd8306;
-    padding: 2%;
+    padding: 2.5%;
     width: 35%;
     margin: 10px;
     color: whitesmoke;
@@ -156,8 +156,13 @@ body {
         width: 24%;
     }
 
+    #questsContainer{
+        width: 80%;
+
+    }
+  
     .customAnsBtns {
-        padding: 5%;
+        padding: 4%;
         width: 70%;
     }
 
